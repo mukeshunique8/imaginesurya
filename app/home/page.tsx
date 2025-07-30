@@ -2,7 +2,6 @@ import Footer from "@/components/Footer";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
-import PhotoGridSection from "@/components/PhotoGridSection";
 
 export default function HomePage() {
   return (
