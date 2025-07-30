@@ -1,0 +1,21 @@
+import Footer from "@/components/Footer";
+import { PhotoGrid } from "@/components/PhotoGrid";
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
+import PhotoGridSection from "@/components/PhotoGridSection";
+
+export default function HomePage() {
+  return (
+    <main className="bg-background text-foreground">
+      <HeroSection bucket="photos" folder="photos" />
+      <AboutSection bucket="photos" folder="photos" />
+      <div className="container mx-auto py-12">
+        <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
+        <PhotoGrid bucket="photos" folder="photos" />
+      </div>
+      <div className="container mx-auto pt-5">
+        <Footer />
+      </div>
+    </main>
+  );
+}
