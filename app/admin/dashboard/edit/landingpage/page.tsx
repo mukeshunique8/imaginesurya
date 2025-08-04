@@ -1,9 +1,11 @@
+import EditHeroSection from "@/components/admin/EditHeroSection";
 import React from "react";
 
 export default function page() {
   return (
     <div>
       <h2 className="text-xl font-semibold">Welcome to LandingPage Section</h2>
+      <EditHeroSection></EditHeroSection>
     </div>
   );
 }

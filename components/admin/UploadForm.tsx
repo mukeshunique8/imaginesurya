@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { supabase } from "@/lib/supabaseClient";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Swal from "sweetalert2";
+import { supabaseServerClient } from "@/app/utils/supabaseServerClient";
 
 export default function UploadForm({ userId }: { userId: string }) {
   const [file, setFile] = useState<File | null>(null);
@@ -49,7 +49,7 @@ export default function UploadForm({ userId }: { userId: string }) {
     const formattedDate = now.toISOString().slice(0, 10).replace(/-/g, "");
     const sanitizedFilename = sanitizeFilename(file.name);
     const filePath = `photos/${formattedDate}_${Date.now()}-${sanitizedFilename}`;
-
+    const supabase = supabaseServerClient();
     try {
       const { error } = await supabase.storage.from("photos").upload(filePath, file);
 

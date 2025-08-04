@@ -2,7 +2,7 @@ import AppSidebar from "@/components/dashboard-elements/AppSidebar";
 import Navbar from "@/components/dashboard-elements/Navbar";
 import UnauthorizedFallback from "@/components/elements/unauthorized-fallback";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { requireAdminSession } from "@/lib/authGuard";
+import { requireAdminSession } from "@/app/utils/authGuard";
 import { cookies } from "next/headers";
 import React from "react";
 

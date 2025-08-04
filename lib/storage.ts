@@ -1,7 +1,7 @@
-import { supabase } from "./supabaseClient";
+import { supabasePublicClient } from "../app/utils/supabasePublicClient";
 
 export async function listImagesFromBucket(bucket: string, folder = "") {
-  const { data, error } = await supabase.storage.from(bucket).list(folder, {
+  const { data, error } = await supabasePublicClient.storage.from(bucket).list(folder, {
     limit: 100,
     offset: 0,
     sortBy: { column: "name", order: "asc" },
@@ -12,10 +12,10 @@ export async function listImagesFromBucket(bucket: string, folder = "") {
 }
 
 export function getImageURL(bucket: string, path: string) {
-  return supabase.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+  return supabasePublicClient.storage.from(bucket).getPublicUrl(path).data.publicUrl;
 }
 export function getPublicImageURL(bucket: string, path: string) {
-  return supabase.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+  return supabasePublicClient.storage.from(bucket).getPublicUrl(path).data.publicUrl;
 }
 
 export async function getRandomImageURL(bucket: string, folder = "") {

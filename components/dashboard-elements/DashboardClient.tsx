@@ -3,7 +3,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { DASHBOARD_HIGHLIGHTS } from "@/lib/data/dashboardHighlights";
 import { Card, CardContent } from "@/components/ui/card";
-import gsap from "gsap";
 import { Folder, Image, LucideIcon, Users, Calendar, HardDrive, Star, Clock, Camera } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
