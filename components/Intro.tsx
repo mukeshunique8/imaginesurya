@@ -1,5 +1,5 @@
 "use client";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/layouts/home/HeroSection";
 import { motion } from "framer-motion";
 import { useScroll, useTransform } from "framer-motion";
 export default function Intro() {

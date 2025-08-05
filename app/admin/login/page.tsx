@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabaseClient";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import gsap from "gsap";
 import Swal from "sweetalert2";
 import { showError, showSuccess } from "@/lib/helpers/swalHelper";
+import { supabasePublicClient } from "@/app/utils/supabasePublicClient";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
   }, []);
 
   const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await supabasePublicClient.auth.signInWithPassword({ email, password });
 
     if (error) {
       showError(error.message, "Login Failed");
