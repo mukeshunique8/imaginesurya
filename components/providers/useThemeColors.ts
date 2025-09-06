@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // Define primary → secondary combos
 const colorCombos: Record<string, string> = {
-  "#000000": "#6b7280", // black → gray
+  // "#000000": "#6b7280", // black → gray
   "#ef4444": "#fecaca", // red → light red
   "#3b82f6": "#bfdbfe", // blue → light blue
   "#10b981": "#a7f3d0", // green → mint
