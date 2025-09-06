@@ -124,7 +124,7 @@ export default function UserFooter() {
   }
 
   return (
-    <footer className="w-full py-10 border-t relative overflow-hidden ">
+    <footer className="w-full py-10  relative overflow-hidden ">
       <BackgroundBeams />
       {/* Animated background elements */}
       {/* <div className="absolute inset-0 overflow-hidden">
@@ -169,41 +169,46 @@ export default function UserFooter() {
             })}
           </div>
 
-          {/* Social Links */}
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-10" data-aos="fade-up" data-aos-delay="600">
-            {data.socialLinks.map((social, index) => {
-              const IconComponent = social.icon;
-              return (
-                <a
-                  key={social.id}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center w-12 h-12 rounded-full  shadow-md  transition-all duration-300 ${social.color} hover:shadow-lg transform hover:-translate-y-1`}
-                  data-aos="zoom-in"
-                  data-aos-delay={100 * (index + 1)}
-                >
-                  <IconComponent size={20} />
-                </a>
-              );
-            })}
-          </div>
+          <section className="flex flex-col items-center justify-center mb-10" data-aos="fade-up" data-aos-delay="600">
+            {/* Social Links */}
+            <div className="flex flex-wrap justify-center items-center gap-6 mb-10" data-aos="fade-up" data-aos-delay="600">
+              {data.socialLinks.map((social, index) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.id}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-center w-12 h-12 rounded-full  shadow-md  transition-all duration-300 ${social.color} hover:shadow-lg transform hover:-translate-y-1`}
+                    data-aos="zoom-in"
+                    data-aos-delay={100 * (index + 1)}
+                  >
+                    <IconComponent size={20} />
+                  </a>
+                );
+              })}
+            </div>
 
-          {/* Copyright */}
-          <div className="text-center" data-aos="fade-up" data-aos-delay="700">
-            <span className="text-gray-500 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-1">
-              <span>
-                © {currentYear} {data.copyright.text}
+            {/* Copyright */}
+            <div className="text-center" data-aos="fade-up" data-aos-delay="700">
+              <span className="text-gray-500 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-1">
+                <span>
+                  © {currentYear} {data.copyright.text}
+                </span>
               </span>
-              <span className="hidden md:inline">•</span>
-              <span className="flex items-center">
-                {data.copyright.madeBy.text} <Heart size={16} className="text-red-500 mx-1" /> by
-                <a href={data.copyright.madeBy.url} className="text-primary hover:text-secondary ml-1 transition-colors duration-300">
+            </div>
+            <div>
+              <span className="flex flex-wrap mt-2 items-center gap-1 text-sm sm:text-base">
+                Crafted with
+                <Heart className="text-red-500 w-4 h-4 sm:w-4 sm:h-4" />
+                chill vibes, questionable booze, and extreme procrastination by
+                <a href={data.copyright.madeBy.url} className="text-primary hover:text-secondary transition-colors duration-300">
                   {data.copyright.madeBy.author}
                 </a>
               </span>
-            </span>
-          </div>
+            </div>
+          </section>
         </div>
       </div>
 
