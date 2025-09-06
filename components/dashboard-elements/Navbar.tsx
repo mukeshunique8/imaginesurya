@@ -7,8 +7,17 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
 import { SidebarTrigger } from "../ui/sidebar";
+import { supabasePublicClient } from "@/app/utils/supabasePublicClient";
+interface DashboardNavbarProps {
+  user?: any;
+}
 
-const Navbar = () => {
+export const handleLogout = async () => {
+  await supabasePublicClient.auth.signOut();
+  // Force a full page reload to clear all states
+  window.location.href = "/login";
+};
+const Navbar = ({ user }: DashboardNavbarProps) => {
   const { setTheme } = useTheme();
   return (
     <nav className="p-4 flex items-center justify-between sticky top-0 bg-background z-10">
@@ -36,6 +45,12 @@ const Navbar = () => {
           </DropdownMenuContent>
         </DropdownMenu>
         {/* USER MENU */}
+        <div className="flex items-center gap-4">
+          <span>Welcome, {user?.email}</span>
+          <Button variant="outline" onClick={handleLogout}>
+            Logout
+          </Button>
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar>

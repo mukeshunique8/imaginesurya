@@ -1,10 +1,19 @@
 export const ADMINROUTES = {
-  LOGIN: "/admin/login",
-  LOGOUT: "/admin/login",
-  DASHBOARD: "/admin/dashboard",
+  LOGIN: "/login",
+  LOGOUT: "/login",
+  DASHBOARD: "/dashboard",
   ///////////////////////////////
-  EDIT_LANDINGPAGE: "/admin/dashboard/edit/landingpage",
-  EDIT_GALLERY: "/admin/dashboard/edit/gallery",
-  EDIT_NAVBAR: "/admin/dashboard/edit/navbar",
-  EDIT_FOOTER: "/admin/dashboard/edit/footer",
+  EDIT_LANDINGPAGE: "/dashboard/edit/landingpage",
+  EDIT_GALLERY: "/dashboard/edit/gallery",
+  EDIT_NAVBAR: "/dashboard/edit/navbar",
+  EDIT_FOOTER: "/dashboard/edit/footer",
+};
+
+export const USERROUTES = {
+  HOME: "/",
+  EVENTS: "/events",
+  GALLERY: "/gallery",
+  ABOUT: "/about",
+  CONTACT: "/contact",
+  FAQ: "/faq",
 };

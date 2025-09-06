@@ -41,7 +41,7 @@ const AppSidebar = () => {
       </SidebarHeader>
       <SidebarSeparator />
       <AppSideBarContent></AppSideBarContent>
-      {/* <SidebarFooter>
+      <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
             <DropdownMenu>
@@ -58,7 +58,7 @@ const AppSidebar = () => {
             </DropdownMenu>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarFooter> */}
+      </SidebarFooter>
     </Sidebar>
   );
 };

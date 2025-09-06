@@ -1,31 +1,34 @@
 import * as motion from "motion/react-client";
 import type { Variants } from "motion/react";
+import Image from "next/image";
 
 export default function EmojiScroller() {
   return (
     <div style={container}>
-      {food.map(([emoji, hueA, hueB], i) => (
-        <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
+      {food.map(([url, emoji, hueA, hueB], i) => (
+        <Card i={i} url={url} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
       ))}
     </div>
   );
 }
 
 interface CardProps {
+  url: string;
   emoji: string;
   hueA: number;
   hueB: number;
   i: number;
 }
 
-function Card({ emoji, hueA, hueB, i }: CardProps) {
+function Card({ url, emoji, hueA, hueB, i }: CardProps) {
   const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   return (
     <motion.div className={`card-container-${i}`} style={cardContainer} initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.8 }}>
       <div style={{ ...splash, background }} />
       <motion.div style={card} variants={cardVariants} className="card">
-        {emoji}
+        {/* {emoji} */}
+        <Image src={url} alt={emoji} width={300} height={430} />
       </motion.div>
     </motion.div>
   );
@@ -54,7 +57,8 @@ const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
 
 const container: React.CSSProperties = {
   margin: "100px auto",
-  maxWidth: 500,
+  maxWidth: 700,
+  minWidth: 500,
   paddingBottom: 100,
   width: "100%",
 };
@@ -95,13 +99,13 @@ const card: React.CSSProperties = {
  * ==============   Data   ================
  */
 
-const food: [string, number, number][] = [
-  ["🍅", 340, 10],
-  ["🍊", 20, 40],
-  ["🍋", 60, 90],
-  ["🍐", 80, 120],
-  ["🍏", 100, 140],
-  ["🫐", 205, 245],
-  ["🍆", 260, 290],
-  ["🍇", 290, 320],
+const food: [string, string, number, number][] = [
+  ["/landing/scroller/scroller1.jpg", "🍅", 340, 10],
+  ["/landing/scroller/scroller1.jpg", "🍊", 20, 40],
+  ["/landing/scroller/scroller1.jpg", "🍋", 60, 90],
+  ["/landing/scroller/scroller1.jpg", "🍐", 80, 120],
+  ["/landing/scroller/scroller1.jpg", "🍏", 100, 140],
+  ["/landing/scroller/scroller1.jpg", "🫐", 205, 245],
+  ["/landing/scroller/scroller1.jpg", "🍆", 260, 290],
+  ["/landing/scroller/scroller1.jpg", "🍇", 290, 320],
 ];

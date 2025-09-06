@@ -29,6 +29,7 @@
     "@tsparticles/slim": "^3.9.1",
     "@types/gsap": "^1.20.2",
     "@types/three": "^0.179.0",
+    "aos": "^3.0.0-beta.6",
     "beautiful-react-hooks": "^5.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -60,6 +61,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

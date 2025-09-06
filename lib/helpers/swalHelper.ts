@@ -15,7 +15,7 @@ export const showSuccess = (message: string, title = "Success") => {
     icon: "success",
     title,
     text: message,
-    timer: 1500,
+    timer: 3500,
     showConfirmButton: false,
   });
 };
